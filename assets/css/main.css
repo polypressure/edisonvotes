@@ -1363,7 +1363,7 @@
 
 		a:hover {
 			border-bottom-color: transparent !important;
-			color: #8cd1a8 !important;
+      color: #0FA0CE !important;
 			text-decoration: none;
 		}
 
@@ -3133,3 +3133,11 @@ h3.candidate {
   color: #61686b;
 }
 
+.how-to-vote a, h3 {
+  color: #61686b;
+  outline: 0;
+}
+
+.how-to-vote a:hover h3 {
+  color: #0FA0CE !important;
+}
