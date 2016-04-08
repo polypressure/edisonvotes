@@ -3135,9 +3135,12 @@ h3.candidate {
 
 .how-to-vote a, h3 {
   color: #61686b;
-  outline: 0;
 }
 
 .how-to-vote a:hover h3 {
   color: #0FA0CE !important;
 }
+
+a {
+  outline: 0;
+}  
