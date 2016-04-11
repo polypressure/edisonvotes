@@ -3144,3 +3144,10 @@ a {
   opacity: 0;
 }
 
+#two li {
+  margin-bottom: 0.5em;
+}
+
+#ideas-popup li {
+  margin-bottom: 0.8em;
+}
