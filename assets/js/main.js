@@ -215,23 +215,27 @@
       mainClass: 'mfp-3d-unfold'
     });
 
-    $('a[href^="mailto:"]').each(function() {
-      coded = "BfqZPw.GP1BZ@7LDqy.XPL"
-      key = "JtMhy9oEK6AGz8Qqa47rmHY1cs3dPSjTUNVeunDk2pLWl5XZOfRvC0biIBgwxF"
-      shift = coded.length
-      link = ""
-      for (i=0; i<coded.length; i++) {
-        if (key.indexOf(coded.charAt(i)) == -1) {
-          ltr = coded.charAt(i)
-          link += (ltr)
-        }
-        else {
-          ltr = (key.indexOf(coded.charAt(i)) - shift+key.length) % key.length
-          link += (key.charAt(ltr))
-        }
+
+    var coded = "BfqZPw.GP1BZ@7LDqy.XPL"
+    var key = "JtMhy9oEK6AGz8Qqa47rmHY1cs3dPSjTUNVeunDk2pLWl5XZOfRvC0biIBgwxF"
+    var shift = coded.length
+    var link = ""
+    for (i=0; i<coded.length; i++) {
+      if (key.indexOf(coded.charAt(i)) == -1) {
+        ltr = coded.charAt(i)
+        link += (ltr)
       }
+      else {
+        ltr = (key.indexOf(coded.charAt(i)) - shift+key.length) % key.length
+        link += (key.charAt(ltr))
+      }
+    }
+
+    $('a[href^="mailto:"]').each(function() {
       this.href = "mailto:" + link;
     });
+
+    $('#contact-form').attr("action", "https://formspree.io/" + link);
 			
 
 	});
