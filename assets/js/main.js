@@ -212,7 +212,18 @@
       removalDelay: 500,
 
       // mainClass: 'mfp-zoom-in'
-      mainClass: 'mfp-3d-unfold'
+      mainClass: 'mfp-3d-unfold',
+
+      callbacks: {
+        beforeOpen: function() {
+          startWindowScroll = $(window).scrollTop();
+          $('html').addClass('mfp-helper');
+        },
+        close: function() {
+          $('html').removeClass('mfp-helper');
+          $(window).scrollTop(startWindowScroll);
+        }
+      }
     });
 
 
