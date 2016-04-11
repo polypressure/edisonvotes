@@ -173,7 +173,7 @@
 				// Create bg and append it to body.
 					$bg = $('<div class="main-bg" id="' + $this.attr('id') + '-bg"></div>')
 						.css('background-image', (
-							'url("css/images/overlay.png"), url("' + $primaryImg.attr('src') + '")'
+							'url("../css/images/overlay.png"), url("' + $primaryImg.attr('src') + '")'
 						))
 						.appendTo($body);
 
@@ -213,6 +213,24 @@
 
       // mainClass: 'mfp-zoom-in'
       mainClass: 'mfp-3d-unfold'
+    });
+
+    $('a[href^="mailto:"]').each(function() {
+      coded = "BfqZPw.GP1BZ@7LDqy.XPL"
+      key = "JtMhy9oEK6AGz8Qqa47rmHY1cs3dPSjTUNVeunDk2pLWl5XZOfRvC0biIBgwxF"
+      shift = coded.length
+      link = ""
+      for (i=0; i<coded.length; i++) {
+        if (key.indexOf(coded.charAt(i)) == -1) {
+          ltr = coded.charAt(i)
+          link += (ltr)
+        }
+        else {
+          ltr = (key.indexOf(coded.charAt(i)) - shift+key.length) % key.length
+          link += (key.charAt(ltr))
+        }
+      }
+      this.href = "mailto:" + link;
     });
 			
 
